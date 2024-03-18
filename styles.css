@@ -1,0 +1,62 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+   background-color: #2b2d42; 
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+
+}
+
+h1 {
+    font-family: "Corinthia", cursive;
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+button {
+    border-radius: 50%;
+    width: 6rem;
+    border: none;
+    background-color: gold;
+    color: #2b2d42;
+    box-shadow: 10px 5px 10px -1px #2b2d42;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-weight: 700;
+    font-size: 1rem;
+
+}
+.container {
+    background-color: #d90429;
+    width: 80vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: gold;
+    border-radius: 50px;
+    padding: 1rem;
+    gap: 1rem;
+    font-family: Copperplate, Papyrus, fantasy;
+    font-weight: 700;
+    
+}
+
+.gridContainer {
+    background-color: antiquewhite;
+    width: 60vw;
+    height: 60vh;
+    border-radius: 15px;
+}
+
+.userInput {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
