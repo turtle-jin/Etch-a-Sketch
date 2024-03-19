@@ -53,6 +53,7 @@ button:hover {
     gap: 1rem;
     font-family: "Roboto Serif", serif;
     font-weight: 600;
+    box-shadow: 35px 30px 3px -1px rgb(92, 9, 28);
     
     
 }
