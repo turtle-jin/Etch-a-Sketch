@@ -20,22 +20,30 @@ h1 {
     font-size: 4rem;
 }
 
+
 button {
     border-radius: 50%;
-    width: 6rem;
+    width: 100px;
+    height: 100px;
     border: none;
     background-color: gold;
     color: #2b2d42;
     box-shadow: 10px 5px 10px -1px #2b2d42;
-    font-family: Copperplate, Papyrus, fantasy;
+    font-family: "Roboto Serif", serif;
     font-weight: 700;
     font-size: 1rem;
+    padding: 1rem;
 
+}
+
+button:hover {
+    background-color: pink;
+    cursor: pointer;
 }
 .container {
     background-color: #d90429;
-    width: 80vw;
-    height: 80vh;
+    width: 1000px;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,16 +51,29 @@ button {
     border-radius: 50px;
     padding: 1rem;
     gap: 1rem;
-    font-family: Copperplate, Papyrus, fantasy;
-    font-weight: 700;
+    font-family: "Roboto Serif", serif;
+    font-weight: 600;
+    
     
 }
 
 .gridContainer {
     background-color: antiquewhite;
-    width: 60vw;
-    height: 60vh;
+    width: 800px;
+    height: 800px;
     border-radius: 15px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    
+
+}
+
+.cell {
+    border: 0.1px solid gray;
+    background-color: antiquewhite;
+    
+    
 }
 
 .userInput {
@@ -60,9 +81,26 @@ button {
     justify-content: space-evenly;
     width: 100%;
     text-align: center;
+    align-items: center;
+    /* border: solid; */
+    padding: 1rem;
 }
 
 #colorSelector {
     width: 50px;
     height: 40px;
+    cursor: pointer;
+}
+
+.size, 
+.color {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+input {
+    cursor: pointer;
 }
