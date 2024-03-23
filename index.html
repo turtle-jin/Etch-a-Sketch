@@ -19,16 +19,18 @@
         <h3>Pixel Art Maker</h3>
         <p id="status">Current Status: Drawing</p>
         <div class="userInput">
-            <div class="size">
-                <h2>Canvas Size:</h2>
-                <input type="range" min="2" max="100" id="user_input" value="16">
-                <p>Size: <output id="value">16 x 16</output></p>
+            <div class="left">
+                <div class="size">
+                    <h2>Canvas Size:</h2>
+                    <input type="range" min="2" max="100" id="user_input" value="16">
+                    <p>Size: <output id="value">16 x 16</output></p>
+                </div>
+                <div class="color">
+                    <h2>Pick a Color:</h2>
+                    <input type="color" id="colorSelector">
+                </div>
             </div>
-            <div class="color">
-                <h2>Pick a Color:</h2>
-                <input type="color" id="colorSelector">
-                <p>Click on canvas to draw</p>
-            </div>
+            
             <button id="eraserButton">Eraser</button>
             <button id="rainbowButton">Rainbow Color</button>          
             <button id="resetButton">Reset Canvas</button>

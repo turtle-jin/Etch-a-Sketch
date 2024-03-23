@@ -6,8 +6,14 @@ const colorSelector = document.querySelector("#colorSelector");
 const rainbowButton = document.querySelector("#rainbowButton");
 const resetButton = document.querySelector("#resetButton");
 const eraserButton = document.querySelector("#eraserButton");
-const currentStatus = document.querySelector("#status")
+const currentStatus = document.querySelector("#status");
 
+// Get computed style
+const computedStyle = window.getComputedStyle(gridContainer);
+
+// Retrieve the css property value
+let width = parseInt(computedStyle.getPropertyValue("width"));
+console.log(`grid width is ${width}`)
 
 let isRainbowMode = false;
 let gridSize = userInput.value;
@@ -20,7 +26,8 @@ function drawGrid(size) {
     for (let i = 0; i < size; i++) {
         for (let j = 0; j < size; j++) {
             const cell = document.createElement("div");
-            let cellWidth = 800 / size;
+            let cellWidth = width / size;
+            console.log(`width for each cell is ${cellWidth}`)
             cell.style.width = `${cellWidth}px`;
             cell.style.height = `${cellWidth}px`;
             cell.classList.add("cell");
@@ -30,7 +37,7 @@ function drawGrid(size) {
     }
 
     //mousedown event to start drawing
-    gridContainer.addEventListener("mousedown", () => {
+    gridContainer.addEventListener("mousedown", (event) => {
         isDrawing = true;
         if (isDrawing) {
             const cell = event.target;
