@@ -20,7 +20,7 @@ function drawGrid(size) {
             cell.style.width = `${cellWidth}px`;
             cell.style.height = `${cellWidth}px`;
             cell.classList.add("cell");
-            cell.addEventListener("click", () => {
+            cell.addEventListener("mousedown", () => {
                 if (!eraserButton.classList.contains("active")) {
                     cell.style.backgroundColor = colorSelector.value;
                 } else {
