@@ -6,6 +6,8 @@ const colorSelector = document.querySelector("#colorSelector");
 const rainbowButton = document.querySelector("#rainbowButton");
 const resetButton = document.querySelector("#resetButton");
 const eraserButton = document.querySelector("#eraserButton");
+const currentStatus = document.querySelector("#status")
+
 
 let isRainbowMode = false;
 let gridSize = userInput.value;
@@ -43,12 +45,14 @@ rainbowButton.addEventListener("click", () => {
     rainbowButton.textContent = isRainbowMode ? "Stop Rainbow" : "Rainbow Color";
     if (isRainbowMode) {
         console.log("rainbow mode on");
+        currentStatus.textContent = "Current Status: Rainbow Drawing"
         const cells = document.querySelectorAll(".cell");
         cells.forEach((cell) => {
             cell.addEventListener("mouseover", rainbowMouseOver);
         });
     } else {
         console.log("rainbow mode off");
+        currentStatus.textContent = "Current Status: Drawing"
         const cells = document.querySelectorAll(".cell");
         cells.forEach((cell) => {
             cell.removeEventListener("mouseover", rainbowMouseOver);
@@ -72,8 +76,11 @@ eraserButton.addEventListener("click", () => {
     eraserButton.classList.toggle("active");
     if (eraserButton.classList.contains("active")) {
         eraserButton.textContent = "Draw"
+        currentStatus.textContent = "Current Status: Erasing"
+        
     } else {
         eraserButton.textContent = "Eraser";
+        currentStatus.textContent = "Current Status: Drawing"
     }
     
 });
