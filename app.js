@@ -80,14 +80,14 @@ rainbowButton.addEventListener("click", () => {
     rainbowButton.textContent = isRainbowMode ? "Stop Rainbow" : "Rainbow Color";
     if (isRainbowMode) {
         console.log("rainbow mode on");
-        currentStatus.textContent = "Current Status: Rainbow Drawing"
+        currentStatus.textContent = "Current Mode: Rainbow Drawing"
         const cells = document.querySelectorAll(".cell");
         cells.forEach((cell) => {
             cell.addEventListener("mouseover", rainbowMouseOver);
         });
     } else {
         console.log("rainbow mode off");
-        currentStatus.textContent = "Current Status: Drawing"
+        currentStatus.textContent = "Current Mode: Drawing"
         const cells = document.querySelectorAll(".cell");
         cells.forEach((cell) => {
             cell.removeEventListener("mouseover", rainbowMouseOver);
@@ -111,11 +111,11 @@ eraserButton.addEventListener("click", () => {
     eraserButton.classList.toggle("active");
     if (eraserButton.classList.contains("active")) {
         eraserButton.textContent = "Draw"
-        currentStatus.textContent = "Current Status: Erasing"
+        currentStatus.textContent = "Current Mode: Erasing"
         
     } else {
         eraserButton.textContent = "Eraser";
-        currentStatus.textContent = "Current Status: Drawing"
+        currentStatus.textContent = "Current Mode: Drawing"
     }
     
 });
