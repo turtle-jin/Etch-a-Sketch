@@ -43,7 +43,12 @@ function drawGrid(size) {
             const cell = event.target;
             if (!cell.classList.contains("cell")) return; // Ensure the target is a cell
             if (!eraserButton.classList.contains("active")) {
-                cell.style.backgroundColor = colorSelector.value;
+                if (isRainbowMode) {
+                    currentStatus.textContent = "Current Mode: Rainbow Drawing"
+                    cell.style.backgroundColor = rainbowColor();
+                } else {
+                    cell.style.backgroundColor = colorSelector.value;
+                }             
             } else {
                 cell.style.backgroundColor = 'antiquewhite';
             }
@@ -56,7 +61,12 @@ function drawGrid(size) {
             const cell = event.target;
             if (!cell.classList.contains("cell")) return; // Ensure the target is a cell
             if (!eraserButton.classList.contains("active")) {
-                cell.style.backgroundColor = colorSelector.value;
+                if (isRainbowMode) {
+                    currentStatus.textContent = "Current Mode: Rainbow Drawing"
+                    cell.style.backgroundColor = rainbowColor();
+                } else {
+                    cell.style.backgroundColor = colorSelector.value;
+                }          
             } else {
                 cell.style.backgroundColor = 'antiquewhite';
             }
@@ -78,26 +88,11 @@ userInput.addEventListener("input", (event) => {
 rainbowButton.addEventListener("click", () => {
     isRainbowMode = !isRainbowMode;
     rainbowButton.textContent = isRainbowMode ? "Stop Rainbow" : "Rainbow Color";
-    if (isRainbowMode) {
-        console.log("rainbow mode on");
-        currentStatus.textContent = "Current Mode: Rainbow Drawing"
-        const cells = document.querySelectorAll(".cell");
-        cells.forEach((cell) => {
-            cell.addEventListener("mouseover", rainbowMouseOver);
-        });
-    } else {
-        console.log("rainbow mode off");
-        currentStatus.textContent = "Current Mode: Drawing"
-        const cells = document.querySelectorAll(".cell");
-        cells.forEach((cell) => {
-            cell.removeEventListener("mouseover", rainbowMouseOver);
-        });
-    }
 });
 
-function rainbowMouseOver() {
+function rainbowColor() {
     const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-    this.style.backgroundColor = randomColor;
+    return randomColor;
 }
 
 resetButton.addEventListener("click", () => {
@@ -116,8 +111,7 @@ eraserButton.addEventListener("click", () => {
     } else {
         eraserButton.textContent = "Eraser";
         currentStatus.textContent = "Current Mode: Drawing"
-    }
-    
+    }   
 });
 
 
