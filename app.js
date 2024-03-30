@@ -44,7 +44,6 @@ function drawGrid(size) {
             if (!cell.classList.contains("cell")) return; // Ensure the target is a cell
             if (!eraserButton.classList.contains("active")) {
                 if (isRainbowMode) {
-                    currentStatus.textContent = "Current Mode: Rainbow Drawing"
                     cell.style.backgroundColor = rainbowColor();
                 } else {
                     cell.style.backgroundColor = colorSelector.value;
@@ -88,6 +87,7 @@ userInput.addEventListener("input", (event) => {
 rainbowButton.addEventListener("click", () => {
     isRainbowMode = !isRainbowMode;
     rainbowButton.textContent = isRainbowMode ? "Stop Rainbow" : "Rainbow Color";
+    currentStatus.textContent = isRainbowMode ? "Current Mode: Rainbow Drawing" : "Current Mode: Select a color and Draw";
 });
 
 function rainbowColor() {
